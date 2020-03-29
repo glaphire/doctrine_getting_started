@@ -1,5 +1,6 @@
 <?php
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,6 +23,16 @@ class User
      */
     protected $name;
 
+    protected $reportedBugs;
+
+    protected $assignedBugs;
+
+    public function __construct()
+    {
+        $this->reportedBugs = new ArrayCollection();
+        $this->assignedBugs = new ArrayCollection();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -40,5 +51,15 @@ class User
     public function setName(string $name)
     {
         $this->name = $name;
+    }
+
+    public function addReportedBug(Bug $bug)
+    {
+        $this->reportedBugs[] = $bug;
+    }
+
+    public function assignedToBug(Bug $bug)
+    {
+        $this->assignedBugs[] = $bug;
     }
 }
