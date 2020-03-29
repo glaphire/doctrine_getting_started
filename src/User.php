@@ -23,8 +23,16 @@ class User
      */
     protected $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Bug", mappedBy="reporter")
+     * @var Bug[] An ArrayCollection of Bug objects/
+     */
     protected $reportedBugs;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Bug", mappedBy="engineer")
+     * @var Bug[] An ArrayCollection of Bug objects/
+     */
     protected $assignedBugs;
 
     public function __construct()
