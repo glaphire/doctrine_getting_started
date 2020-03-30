@@ -2,4 +2,4 @@
 
 Copied examples from Doctrine 2 official documentation to understand basic concepts.
 
-https://www.doctrine-project.org/projects/doctrine-orm/en/current/tutorials/getting-started.html
+https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/tutorials/getting-started.html
