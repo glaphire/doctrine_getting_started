@@ -6,7 +6,7 @@ class BugRepository extends EntityRepository
 {
     public function getRecentBugs($number = 30)
     {
-        $dql = "SELECT b, e, r FROM Bug b JOIN b.engineer e"
+        $dql = "SELECT b, e, r FROM Bug b JOIN b.engineer e "
             . "JOIN b.reporter r ORDER BY b.created DESC";
 
         $query = $this->getEntityManager()->createQuery($dql);
